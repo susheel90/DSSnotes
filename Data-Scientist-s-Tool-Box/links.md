@@ -4,6 +4,7 @@
 * [DSS GitHub Home Page](http://datasciencespecialization.github.io/)  
 
 ##Git
+* [Git Command Cheatsheet](https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf)  
 * [Git Reference](http://gitref.org/)  
 * [Git Documentation](http://git-scm.com/doc)  
 
