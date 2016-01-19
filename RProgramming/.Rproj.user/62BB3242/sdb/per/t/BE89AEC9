@@ -1,0 +1,17 @@
+{
+    "contents" : "complete <- function(directory = \"specdata\", id = 1:332) {\n    \n\n    flist <- dir(directory, full.names = TRUE)      ## list all files\n    tlist <- lapply(flist,read.csv)                 ## read all files\n        tlist2 <- lapply(tlist, complete.cases)     ## cobs for all files\n            tlist3 <- lapply(tlist2, sum)           ## number of cobs\n                tlist4 <- tlist3[id]                ## return specific id's\n    \n    cobs <- data.frame(\n                        matrix(\n                        unlist(tlist4), nrow = length(id), byrow = TRUE),\n            stringsAsFactors = FALSE)\n    \n    cobs <- cbind.data.frame(\"id\" = id, \"nobs\" = cobs)      ## combine everything\n    colnames(cobs) <- c(\"id\", \"nobs\")\n    return(cobs)                                        ## print\n}",
+    "created" : 1453171812678.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3889859202",
+    "id" : "BE89AEC9",
+    "lastKnownWriteTime" : 1453172205,
+    "path" : "~/DSSNotes/RProgramming/complete.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

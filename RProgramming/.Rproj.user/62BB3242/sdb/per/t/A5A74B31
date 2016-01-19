@@ -1,0 +1,17 @@
+{
+    "contents" : "corr <- function(directory = \"specdata\", threshold = 0) {\n        \ncnobs <- complete()                                 ## call complete()\n    thresh <- cnobs[cnobs$nobs > threshold, ]       ## filter on threshold\n        f1 <- dir(path = directory, full.names = T) ## list directory files    \n        f2 <- f1[thresh[[1]]]                       ## create index files\n            t1 <- lapply(f2,read.csv)               ## read index files\ncorr_result <- sapply(t1, function(x) cor(x[2], x[3], use = \"complete.obs\"))       \nreturn(corr_result)\n}",
+    "created" : 1453171816515.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1032327499",
+    "id" : "A5A74B31",
+    "lastKnownWriteTime" : 1453172218,
+    "path" : "~/DSSNotes/RProgramming/corr.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

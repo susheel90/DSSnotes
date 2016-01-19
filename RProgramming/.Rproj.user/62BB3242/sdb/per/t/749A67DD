@@ -1,0 +1,17 @@
+{
+    "contents" : "pollutantmean <- function(directory, pollutant , id = 1:332) {\n\n    \n## create data frame to hold all id.csv files\nmaster_data <- data.frame()\n\n\n    ##\n    ## loop through each id\n    for (j in 1:length(id)){\n        \n    \n        k <- as.numeric(id[j])\n        \n        ## append necessary starting characters\n        if (k < 10) {\n            ## append 00\n            k <- as.character(k)\n            k <- paste(\"00\", k, sep = \"\")\n        \n            } else if (k >= 10 && k < 100) {\n            ## append 0\n            k <- as.character(k)\n            k <- paste(\"0\", k, sep = \"\")\n        \n            } else {\n            ## append nothing\n            k <- as.character(k)\n        }\n    \n    ## create file path, data frame, and then append it to the master\n    file_path <- paste(getwd(), \"/\", directory, \"/\", k, \".csv\", sep = \"\")\n    file_table <- read.csv(file_path)\n    master_data <- rbind.data.frame(master_data, file_table)\n    \n    \n    ## This is the end of the loop ##\n    ##\n    }\n    \n\n## find the average of the specified pollutant and print\nall_mean <- colMeans(master_data[pollutant], na.rm = TRUE)\nprint(all_mean)\n\n\n}",
+    "created" : 1453171806223.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1267347809",
+    "id" : "749A67DD",
+    "lastKnownWriteTime" : 1453172230,
+    "path" : "~/DSSNotes/RProgramming/pollutantmean.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
