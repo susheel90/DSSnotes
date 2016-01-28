@@ -1,4 +1,4 @@
-#Notes
+#Week1
 
 ###Components of Tidy Data
 * Raw data - the file from which data is taken; the original format
@@ -85,3 +85,5 @@ teams
   * Object (in curly brackets {})
 * `library(jsonlite)`
   * `readJSON()`
+* http://www.json.org/
+* http://www.r-bloggers.com/new-package-jsonlite-a-smarter-json-encoderdecoder/
