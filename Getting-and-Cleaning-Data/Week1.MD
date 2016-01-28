@@ -65,3 +65,23 @@
     * `rootNode` = the root node
     * `//node` = the name of the node
     * `xmlValue` = the XML value (elements)
+```
+fileUrl("http://espn.go.com/nfl/team/_/name/bal/baltimore-ravens"
+doc <- htmlTreeParse(fileUrl, useInternal = TRUE)
+scores <- xpathSApply(doc, "//li[@class='score']", xmlValue)
+teams <- xpathSApply(doc, "//li[@class='team-name']", xmlValue)
+scores
+teams
+```
+
+###Reading JSON
+* Javascript Object Notation
+* Similar to XML
+* Common API data format
+  * Numbers
+  * Strings (doube quotes "")
+  * Boolean (true or false)
+  * Array (in brackets [])
+  * Object (in curly brackets {})
+* `library(jsonlite)`
+  * `readJSON()`
