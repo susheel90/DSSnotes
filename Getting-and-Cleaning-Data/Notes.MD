@@ -16,3 +16,8 @@
   * Experimental study design
   * Markdown file format
 * Recipe - exact and explicit detailing of steps taken to go from one data format (raw) to the next (tidy)
+  * A computer script
+  * Input is the raw data
+  * Outpus is processed data (tidy data)
+  * No parameters to the script (everything is fixed and ready-to-go)
+  * Explicitly state steps that cannot be script
