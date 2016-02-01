@@ -62,7 +62,10 @@
 * Attribute = components of the tag/label
   * `<tag an-attribute = "2">`
 * `library(XML)` = reads XML files
-  * `rootNode` = `rootNode[[1]]` returns the first element; `rootNode[[1]][[1]]` extracts the first subnode of the first root node
+* `xmlRoot()` = retrieves the wrapper (outer most tage) of the xml file
+  * `rootNode <- xmlRoot(doc)` = retrieves the root nodes
+  * `rootNode[[1]]` = returns the first element
+  * `rootNode[[1]][[1]]` = extracts the first subnode of the first root node
 * XPath - HTML stuff; see: http//www.stat.berkley.edu/~statcur/Workshop2/Presentations/XML.pdf
   * `/node` = top level node
   * `//node` = node at any level
