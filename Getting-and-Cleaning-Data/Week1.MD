@@ -1,5 +1,12 @@
 #Week1
 
+* [Components of Tidy Data](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week1.MD#components-of-tidy-data)
+* [Downloading Files](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week1.MD#downloading-files)
+* [Reading Local Files](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week1.MD#reading-local-files)
+* [Reading Excel Files](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week1.MD#reading-excel-files)
+* [Reading XML](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week1.MD#reading-xml)
+* [Reading JSON](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week1.MD#reading-json)
+
 ###Components of Tidy Data
 * Raw data - the file from which data is taken; the original format
   * No software or processing associated with data
@@ -87,3 +94,16 @@ teams
   * `readJSON()`
 * http://www.json.org/
 * http://www.r-bloggers.com/new-package-jsonlite-a-smarter-json-encoderdecoder/
+
+###The data.table Package
+* Inherets from `data.frame()`
+  * Pass same arguments for `data.table()` as you would `data.frame()`
+* `tables()`
+  * `NAME`, `NROW`, `MB`, `COLS`, `KEY`
+* Can use expressions on rows and columns (i.e. `dt[,list(mean(x), sum(z))]`)
+* Easily add new columns (i.e. `dt[,w := z^2]`)
+* Special variables and functions
+  * `.N` = count; an integer, length 1, containing the count
+  * `setkey()` = sets the key for the table
+    * Subsetting `setkey(dt, x); dt['a]` will return values in the column `x` which are equal to `a`
+    * Merging `setkey(dt1, x); setkey(dt2, x); merge(dt1, dt2)` will merge (join) the two tables on the key
