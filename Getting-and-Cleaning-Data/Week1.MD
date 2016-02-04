@@ -6,6 +6,7 @@
 * [Reading Excel Files](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week1.MD#reading-excel-files)
 * [Reading XML](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week1.MD#reading-xml)
 * [Reading JSON](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week1.MD#reading-json)
+* [The data.table Package](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week1.MD#the-datatable-package)  
 
 ###Components of Tidy Data
 * Raw data - the file from which data is taken; the original format
@@ -45,6 +46,7 @@
   * `skip` = number of lines to skip
 
 ###Reading Excel Files
+* Use `library(openxlsx)` and `library(readxl)`, which have no Java dependency
 * `library(xlsx)`
   * `read.xlsx()`
     * `dest` = file path
