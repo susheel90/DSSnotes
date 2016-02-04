@@ -77,6 +77,11 @@
     * `rootNode` = the root node
     * `//node` = the name of the node
     * `xmlValue` = the XML value (elements)
+    * Nodes = list of nodes you may use:
+      * `li` = list element
+      * `td` = table element
+      * `a` = link
+      * `title` = title
 ```
 fileUrl("http://espn.go.com/nfl/team/_/name/bal/baltimore-ravens"
 doc <- htmlTreeParse(fileUrl, useInternal = TRUE)
