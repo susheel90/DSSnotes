@@ -58,3 +58,9 @@
     * `token`
     * `token_secret`
   * `GET()` = use the API url and sign-in authorization (`sign_oauth1.0()`)
+  * `POST()`
+  * `PUT()`
+  * `DELETE()`
+* `library(jsonlite)`
+  * `content()`
+  * `jsonlite::fromJSON()`
