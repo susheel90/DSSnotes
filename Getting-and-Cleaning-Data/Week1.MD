@@ -31,8 +31,8 @@
   * Explicitly state steps that cannot be script
 
 ###Downloading Files
-* Download through R to include in scripts that you can share
-* Record the date when you download a fiel (in case it changes at a later date)
+* Download files through R; allows you to include and share scripts
+* Record the date when you download a file (in case it changes at a later date)
 * `download.file()` = download file from the internet (especially text)
   * `url` = website
   * `destfile` = where to download on computer (and what file format i.e. .csv, .txt, .las, etc)
