@@ -1,6 +1,6 @@
 #Week 2
 
-###MySQL
+###Reading from MySQL
 * `library(RMySQL)` = package allows connection to a database
   * `dbConnect()` = connects to a MySQL database
     * `object` = `MySQL()`
@@ -17,4 +17,31 @@
     * `dbClearResult()` = clear the query from the server
   * `dbDisconnect()` = disconnects from the database server
 
-###HDF5
+###Reading from HDF5
+* Used for storing large data sets
+* Supports storing a range of data types
+* Heirarchical data format
+  * Groups = contain data sets and metadata
+    * Cotains a header with group name and list of attributes
+    * Contains a group symbol table with a list of objects in group
+  * Datasets = multidimensional array of data elements with metadata
+* `source("http://bioconductor.org/biocLite.R"); biocLite("rhdf5"); library(rhdf5)`
+* `h5createFile()` = creates an hdf5 file (extension `.h5`)
+* `h5write()` = writes an object (array) to a file
+  * `object` = the object to write to the file
+  * `file` = the name of the file to be written
+  * `name` = name of the dataset in the hdf5 file
+* `h5read()` = reads an object from an hdf5 file
+  * `h5readAttributes()` = reads attributes
+* `h5ls()` = like `ls()` for hdf5 objects
+
+###Reading from the Web
+* `url()` = opens connection to specified url
+* `readLines()` = reads lines of data from connection
+* `close()` = closes a url connection
+* `library(XML)`
+  * `htmlTreeParse()` = reads data from HTML file
+* `library(httr)`
+  * `GET()` = connects to specified url
+  * `content()` = retrieves specified data from the given url connection
+  * `htmlParse()` = parse html text
