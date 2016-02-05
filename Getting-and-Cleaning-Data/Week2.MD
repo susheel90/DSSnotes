@@ -64,3 +64,16 @@
 * `library(jsonlite)`
   * `content()`
   * `jsonlite::fromJSON()`
+
+###Reading From Other Sources
+* There is a package for everything
+* Interacting with files
+  * `file()`
+  * `url()`
+  * `gzfile()`
+  * `bzfile()`
+* Foreign package = reads data from Minitab, S, SAS, SPSS< Stata, Systat
+  * `read.arff()`
+* Database packages
+  * `library(RPostresSQL)` = DBI compliant database connection package
+  * `library(RSQLServer)`
