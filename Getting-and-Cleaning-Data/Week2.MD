@@ -64,6 +64,7 @@
 * `library(jsonlite)`
   * `content()`
   * `jsonlite::fromJSON()`
+* httr/demo/oauth2-github.r
 
 ###Reading From Other Sources
 * There is a package for everything
