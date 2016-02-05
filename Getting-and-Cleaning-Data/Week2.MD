@@ -43,5 +43,18 @@
   * `htmlTreeParse()` = reads data from HTML file
 * `library(httr)`
   * `GET()` = connects to specified url
+    * `authenticate)` = passes a username and password to a url connection
   * `content()` = retrieves specified data from the given url connection
   * `htmlParse()` = parse html text
+
+###Reading From APIs
+* Must have an account with the website (a key to the API)
+* `library(httr)`
+  * `oauth_app()` = starts the authorization process for an API
+    * `name` = name of application (for convenience)
+    * `key` = username
+    * `secret` = password
+  * `sign_oauth1.0()` =
+    * `token`
+    * `token_secret`
+  * `GET()` = use the API url and sign-in authorization (`sign_oauth1.0()`)
