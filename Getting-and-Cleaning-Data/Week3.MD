@@ -21,3 +21,5 @@
 * `any(is.na(data)) = returns `TRUE` or `FALSE`
 * `all(is.na(data)) = returns `TRUE` or `FALSE`
 * `table(df$col %in% c(data))` = returns whether or not the condition to the right of `%in%` is present in the specified column of the data frame
+  * `df[df$col %in% c(data)]` = returns rows where the predicate is `TRUE`
+* `xtab()` =
