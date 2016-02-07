@@ -23,3 +23,16 @@
 * `table(df$col %in% c(data))` = returns whether or not the condition to the right of `%in%` is present in the specified column of the data frame
   * `df[df$col %in% c(data)]` = returns rows where the predicate is `TRUE`
 * `xtab()` =
+
+###Creating New Variables
+* Sequences
+  * `seq()` = min, max, step, and length
+  * `seq(along = variable)` = create index vector with length `length(variable)`
+* Binary
+  * `ifelse(predicate, <true>, <false>)`
+* Categorical
+  * `cut()` = breaks a vector (data frame column) into sections (called `breaks`)
+    * `c1 <- cut(df$col, breaks = 5)` = will break `df$col` into 5 equal sections (from min to max); will return the break/range that a value falls into
+      * `table(c1)` = will return the count for the 5 breaks
+* Factor
+  * `df$new_col <- factor(df$some_col)`
