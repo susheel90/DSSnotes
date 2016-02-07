@@ -59,3 +59,12 @@
   * `x` = vector to be divided into groups
   * `f` = vector index along which `x` will be divided
   * `split(mtcars$hp, mtcars$cyl)` = will breakdown the horsepower into three groups (the number of cyclinder groups - 4, 6, and 8)
+
+###Managing Data Frames with dplyr - Introduction
+* `select()` = returns a subset fo the columns of a data frame | `SELECT`
+* `filter()` = extracts a subset of rows from a data frame based on logical conditions  | `WHERE`
+* `arrange()` = reorders rows of a data frame | `ORDER BY`
+* `rename()` = renames variables in a data frame
+* `mutate()`
+* `summarise()`
+
