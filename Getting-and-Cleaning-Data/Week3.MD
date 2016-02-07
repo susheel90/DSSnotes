@@ -3,6 +3,7 @@
 * [Subsetting and Sorting](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week3.MD#subsetting-and-sorting)
 * [Summarizing Data](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week3.MD#summarizing-data)
 * [Creating New Variables](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week3.MD#creating-new-variables)
+* [Reshaping Date]
 
 ###Subsetting and Sorting
 * `[]` = subets the specified element in the object
@@ -35,8 +36,26 @@
 * Binary
   * `ifelse(predicate, <true>, <false>)`
 * Categorical
-  * `cut()` = breaks a vector (data frame column) into sections (called `breaks`)
-    * `c1 <- cut(df$col, breaks = 5)` = will break `df$col` into 5 equal sections (from min to max); will return the break/range that a value falls into
+  * `cut()` = breaks a vector (data frame column) into sections (called `breaks`) | [More](http://www.r-bloggers.com/r-function-of-the-day-cut/)
+    * `c1 <- cut(df$col, breaks = 5)` = will break `df$col` into 5 equal sections (from min to max); will return the break/range that a
+    * value falls into
       * `table(c1)` = will return the count for the 5 breaks
+  * `library(Hmisc)` = `cut2()`
 * Factor
   * `df$new_col <- factor(df$some_col, levels = c())`
+* Mutate
+  * `library(plyr)`
+
+###Reshaping Data
+* `library(reshape2)`
+  * `melt()`
+    * `id` = factor (character) variables
+    * `measure.vars` = numeric variables
+* `tapply()`
+  * `X` = vector to apply `FUN` to
+  * `INDEX` = index (vector in same table as `X`) to use when applying `FUN` to `X`
+  * `FUN` = function to apply
+* `split()`
+  * `x` = vector to be divided into groups
+  * `f` = vector index along which `x` will be divided
+  * `split(mtcars$hp, mtcars$cyl)` = will breakdown the horsepower into three groups (the number of cyclinder groups - 4, 6, and 8)
