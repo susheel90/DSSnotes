@@ -1,8 +1,8 @@
 #Week 3
 
-* [Subsetting and Sorting]()
-* [Summarizing Data[()
-* [Creating New Variables]()
+* [Subsetting and Sorting](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week3.MD#subsetting-and-sorting)
+* [Summarizing Data](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week3.MD#summarizing-data)
+* [Creating New Variables](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week3.MD#creating-new-variables)
 
 ###Subsetting and Sorting
 * `[]` = subets the specified element in the object
