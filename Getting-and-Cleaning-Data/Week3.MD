@@ -1,5 +1,9 @@
 #Week 3
 
+* [Subsetting and Sorting]()
+* [Summarizing Data[()
+* [Creating New Variables]()
+
 ###Subsetting and Sorting
 * `[]` = subets the specified element in the object
   * `[which(), ]` = returns rows which meet the predicate without `NA` place holders
@@ -35,4 +39,4 @@
     * `c1 <- cut(df$col, breaks = 5)` = will break `df$col` into 5 equal sections (from min to max); will return the break/range that a value falls into
       * `table(c1)` = will return the count for the 5 breaks
 * Factor
-  * `df$new_col <- factor(df$some_col)`
+  * `df$new_col <- factor(df$some_col, levels = c())`
