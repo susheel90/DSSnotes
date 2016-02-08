@@ -68,7 +68,14 @@ A     B     C     D     E     F
   * `x` = vector to be divided into groups
   * `f` = vector index along which `x` will be divided
   * `split(mtcars$hp, mtcars$cyl)` = will breakdown the horsepower into three groups (the number of cyclinder groups - 4, 6, and 8)
+```
+spIns <- split(InsectSprays$count, InsectSprays$spray)
+sapply(spIns, sum)
+A     B     C     D     E     F
+174 184    25    59    42   200
+```
 * `library(plyr)`
+  * `ddply()`
 
 ###Managing Data Frames with dplyr - Basic Tools
 * `select()` = returns a subset fo the columns of a data frame | `SELECT`
