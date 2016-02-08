@@ -50,10 +50,11 @@
   * `library(plyr)`
 
 ###Reshaping Data
-* `library(reshape2)`
-  * `melt()`
+* `library(reshape2)` | [More](http://seananderson.ca/2013/10/19/reshape.html)
+  * `melt()` = can stack sets of columns into a single column (makes something narrow out of something wide)
     * `id` = factor (character) variables
     * `measure.vars` = numeric variables
+  * `dcast()` 
 * `tapply()`
   * `X` = vector to apply `FUN` to
   * `INDEX` = index (vector in same table as `X`) to use when applying `FUN` to `X`
@@ -79,6 +80,8 @@
   * `by.x =` = key/column to merge ON
   * `by.y =` = key/column to merge ON
   * `all =` = set whether to merge non-existant rows as `NA` rows; `TRUE` or `FALSE`
+* `intersect()` = performs set union, intersection, (asymmetric) difference, equality and membership on two vectors
+  * `intersect(names(x), names(y))` = returns column names that the two objects `x` and `y` have in common
 * `library(plyr)`
   * `join()` = joins two data frames; keys must have the same name
     * `x`
