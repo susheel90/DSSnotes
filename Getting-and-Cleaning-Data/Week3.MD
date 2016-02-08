@@ -59,10 +59,16 @@
   * `X` = vector to apply `FUN` to
   * `INDEX` = index (vector in same table as `X`) to use when applying `FUN` to `X`
   * `FUN` = function to apply
+```
+tapply(InsectSprays$count, InsectSprays$spray, sum)
+A     B     C     D     E     F
+174 184    25    59    42   200
+```
 * `split()`
   * `x` = vector to be divided into groups
   * `f` = vector index along which `x` will be divided
   * `split(mtcars$hp, mtcars$cyl)` = will breakdown the horsepower into three groups (the number of cyclinder groups - 4, 6, and 8)
+* `library(plyr)`
 
 ###Managing Data Frames with dplyr - Basic Tools
 * `select()` = returns a subset fo the columns of a data frame | `SELECT`
