@@ -3,7 +3,9 @@
 * [Subsetting and Sorting](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week3.MD#subsetting-and-sorting)
 * [Summarizing Data](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week3.MD#summarizing-data)
 * [Creating New Variables](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week3.MD#creating-new-variables)
-* [Reshaping Date]
+* [Reshaping Date](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week3.MD#reshaping-data)
+* [Managing Data Frames with dplyr](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week3.MD#managing-data-frames-with-dplyr---basic-tools)
+* [Merging Data](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week3.MD#merging-data)
 
 ###Subsetting and Sorting
 * `[]` = subets the specified element in the object
@@ -70,9 +72,9 @@
 * `summarise()` = like SQL aggregationg (mean, min, max, median, etc)
 
 ###Merging Data
-* `merge()` = merge two objects (i.e. data frames)
-  * `x` = object
-  * `y` = object
-  * `by.x =` = key/column
-  * `by.y =` = key/column
-  * `all =` = `TRUE` or `FALSE`
+* `merge()` = merge two objects (i.e. data frames) | `JOIN`
+  * `x` = object to merge
+  * `y` = object to merge
+  * `by.x =` = key/column to merge ON
+  * `by.y =` = key/column to merge ON
+  * `all =` = set whether to merge non-existant rows as `NA` rows; `TRUE` or `FALSE`
