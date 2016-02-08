@@ -78,3 +78,7 @@
   * `by.x =` = key/column to merge ON
   * `by.y =` = key/column to merge ON
   * `all =` = set whether to merge non-existant rows as `NA` rows; `TRUE` or `FALSE`
+* `library(plyr)`
+  * `join()` = joins two data frames; keys must have the same name
+    * `x`
+    * `y`
