@@ -70,4 +70,9 @@
 * `summarise()` = like SQL aggregationg (mean, min, max, median, etc)
 
 ###Merging Data
-* 
+* `merge()` = merge two objects (i.e. data frames)
+  * `x` = object
+  * `y` = object
+  * `by.x =` = key/column
+  * `by.y =` = key/column
+  * `all =` = `TRUE` or `FALSE`
