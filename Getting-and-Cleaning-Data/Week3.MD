@@ -10,11 +10,12 @@
 
 ### Week 3 Quiz Help
 * https://thoughtfulbloke.wordpress.com/2015/09/09/getting-and-cleaning-week-3/
+
 ###Subsetting and Sorting
 * `[]` = subets the specified element in the object
   * `[which(), ]` = returns rows which meet the predicate without `NA` place holders
   * `[order(), ]` = orders the rows by the specified variable (column/atomic vector)
-* Logical Vectors = vector which retrns only (ideally) the `TRUE` or `FALSE` values of specified predicates, with no `NA` values (which can be treated as `FALSE`)
+* Logical Vectors = vector which retrns only (ideally) the `TRUE` or `FALSE` values of specified predicates, with no `NA` values (which can be treated as `FALSE`) | [More](http://stackoverflow.com/questions/14659001/create-a-logical-vector-in-r-and-use-which-function)
   * `lgvctr <- df$col > value & df$col == value | ...` = returns a logical vector
 * `subset()` = subsets a data frame based on an expression
   * `subset(df, <expression>, select = <column_list>)` = returns all the columns in `<column_list>` where the expression `<expression> is true
