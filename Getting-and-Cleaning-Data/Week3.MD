@@ -1,5 +1,6 @@
 #Week 3
 
+* [Week 3 Quiz Help](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week3.MD#week-3-quiz-help)
 * [Subsetting and Sorting](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week3.MD#subsetting-and-sorting)
 * [Summarizing Data](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week3.MD#summarizing-data)
 * [Creating New Variables](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week3.MD#creating-new-variables)
@@ -7,10 +8,16 @@
 * [Managing Data Frames with dplyr](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week3.MD#managing-data-frames-with-dplyr---basic-tools)
 * [Merging Data](https://github.com/SeaSmith1018/DSSnotes/blob/master/Getting-and-Cleaning-Data/Week3.MD#merging-data)
 
+### Week 3 Quiz Help
+* https://thoughtfulbloke.wordpress.com/2015/09/09/getting-and-cleaning-week-3/
 ###Subsetting and Sorting
 * `[]` = subets the specified element in the object
   * `[which(), ]` = returns rows which meet the predicate without `NA` place holders
   * `[order(), ]` = orders the rows by the specified variable (column/atomic vector)
+* Logical Vectors = vector which retrns only (ideally) the `TRUE` or `FALSE` values of specified predicates, with no `NA` values (which can be treated as `FALSE`)
+  * `lgvctr <- df$col > value & df$col == value | ...` = returns a logical vector
+* `subset()` = subsets a data frame based on an expression
+  * `subset(df, <expression>, select = <column_list>)` = returns all the columns in `<column_list>` where the expression `<expression> is true
 * `sort()` = orders a vector by ascending or descending order
   * `na.last =` = will move `NA` values to the end if `TRUE`
 * `library(plyr)`
@@ -19,8 +26,6 @@
 * Add new columns
   * `df$new_col <- c(data)` = add a new column
   * `new_df <- cbind(old_df, new_col)` = add a new column
-* `subset()` = subsets a data frame based on an expression
-  * `subset(df, <expression>, select = <column_list>)` = returns all the columns in `<column_list>` where the expression `<expression> is true
 
 ###Summarizing Data
 * `head()` = preview first several rows
