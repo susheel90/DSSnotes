@@ -17,4 +17,24 @@
     * `fixed TRUE=` = the match must be exact
   * `grepl()` = returns the logical vector of all the matches
     * `table(grepl("pattern", df$col))` = returns the logical total of matches as `TRUE` and non-matches as `FALSE`
-* Character variables should be converted to factors
+* Variable morality:
+  * Character variables should be converted to factors
+  * All lower case when possible
+  * Descriptive (Male/Female vs 0/1 or M/F)
+  * Not duplicated
+  * No underscores, dots, or white spaces
+
+###Regular Expressions I
+* Literal = matches exactly
+* `^` = start of a line
+* `$` = end of a line
+* `[<upper><lower>]` = will match both upper and lower case letters
+* `[<range>]` = will match to given range
+
+###Regular Expressions II
+* `.` = any single character
+* `|` = combines multiple possible expressions
+* `?` = optional
+* `\` = escape character for literals
+* `*` = repeat any number of times including none
+* `+` = repeat at least one
