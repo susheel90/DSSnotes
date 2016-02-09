@@ -33,7 +33,7 @@
 * `tail()` = preview last several rows
 * `summary()` = summarize factors (variables) by group (mean, max, min, etc)
 * `quantile()` = summarize data by qunatile (top 25%, top 50%, etc)
-  * `probs =` = define the quantiles (i.e. from 0-100% by 10 `probs = seq(0, 1, by = .1)`
+  * `probs =` = define the quantiles (i.e. from 0-100% by 10 `probs = seq(0, 1, by = .1)`)
 * `sum(is.na(data))` = checks for the number of missing values
   * `colSums(is.na(data))` = checks for the number of missing values by column
 * `any(is.na(data)) = returns `TRUE` or `FALSE`
