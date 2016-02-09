@@ -11,12 +11,16 @@
 * `[]` = subets the specified element in the object
   * `[which(), ]` = returns rows which meet the predicate without `NA` place holders
   * `[order(), ]` = orders the rows by the specified variable (column/atomic vector)
+* `sort()` = orders a vector by ascending or descending order
+  * `na.last =` = will move `NA` values to the end if `TRUE`
 * `library(plyr)`
   * `arrange()` = will order specified object by the specified variable
     * `desc()` = will order in descending order
 * Add new columns
   * `df$new_col <- c(data)` = add a new column
   * `new_df <- cbind(old_df, new_col)` = add a new column
+* `subset()` = subsets a data frame based on an expression
+  * `subset(df, <expression>, select = <column_list>)` = returns all the columns in `<column_list>` where the expression `<expression> is true
 
 ###Summarizing Data
 * `head()` = preview first several rows
@@ -82,7 +86,9 @@ A     B     C     D     E     F
 * `filter()` = extracts a subset of rows from a data frame based on logical conditions  | `WHERE`
 * `group_by()` = groups a table by a given variable | `GROUP BY`
 * `arrange()` = reorders rows of a data frame | `ORDER BY`
-* `rename()` = renames variables in a data frame
+  * `desc()` = sorts in descending order
+* `rename()` = renames variables/columns in a data frame
+  * `rename(df, new_name = old_name)`
 * `mutate()`
 * `summarise()` = like SQL aggregationg (mean, min, max, median, etc)
 
