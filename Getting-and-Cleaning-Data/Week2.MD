@@ -65,6 +65,7 @@
   * `content()`
   * `jsonlite::fromJSON()`
 * httr/demo/oauth2-github.r
+* [OAuth Workflow](https://sites.google.com/site/vishyranganath/home/announcements/firstpost/OAuth%20Process.jpg)
 
 ###Reading From Other Sources
 * There is a package for everything
