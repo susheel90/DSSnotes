@@ -80,3 +80,10 @@ Edward Tufte (2006) Beautiful Evidence
     * Annotation in plot is not especially intuitive
     * Use of panel functions and subscripts difficult to wield and requires intense preparation
     * Cannot "add" to the plot once it is created
+  * Functions
+    * `xyplot(x-axis ~ y-axis | grouping, data = data frame, layout = c(grouping specifications))`
+      * `x-axis` = column to populate the x-axis of a plot
+      * `y-axis` = column to populate the y-axis of a plot
+      * `grouping` = column to index/group the x-/y-axises
+      * `data` = data frame or table that has data to populate the plot
+      * `layout` = dimensions of `grouping`
