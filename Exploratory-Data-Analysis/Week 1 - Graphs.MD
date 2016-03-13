@@ -21,7 +21,7 @@ Edward Tufte (2006) Beautiful Evidence
   *  Content is king  
   *  Analytical presentations ultimately stand or fall depending on the quality, relevance, and integrity of their content  
 
-######Exploratory Graphs
+######Exploratory Graphs (part 1)
 
 *  Why do we use graphs
   *  To understand data properties
@@ -39,3 +39,10 @@ Edward Tufte (2006) Beautiful Evidence
 * Histogram = `hist(data, col = "color"); rug(data)`
   *  Avoid too many bars which may create a noisy graph
 * Barplot = `barplot(data)`
+
+#####Exploratory Graphs (part 2)
+
+*  Two dimensions
+  *  Multiple/overlayed 1-D plots (lattic/ggplot2)
+* Plot paramaters = `par(mfrow = c(rows, cols), mar = c(bottom, left, top, right))` 
+* Histogram = `hist(data$col1[data$col3 == "value", $col1], col = "color"]` -or- `subset(data$col1, data$col3 == "value")`
