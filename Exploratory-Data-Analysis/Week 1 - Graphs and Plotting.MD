@@ -87,3 +87,14 @@ Edward Tufte (2006) Beautiful Evidence
       * `grouping` = column to index/group the x-/y-axises
       * `data` = data frame or table that has data to populate the plot
       * `layout` = dimensions of `grouping`
+* The ggplot2 system (`library(ggplot2)`)
+  * Pros
+    * Splits the difference between base and lattice in a number of ways
+    * Automatically deals with spacings, text, tiltes but also allows you to annotate by "adding" to a plot
+    * SUperficial similarity to lattice but generally easier/more intuitive to use
+    * Default mode makes many choices for you (but you can still customize to your heart's desire)
+  * Functions
+    * `qplot(x-axis, y-axis, data = data frame)`
+      * `x-axis` = column to populate the x-axis of a plot
+      * `y-axis` = column to populate the y-axis of a plot
+      * `data` = data frame or table that has data to populate the plot
