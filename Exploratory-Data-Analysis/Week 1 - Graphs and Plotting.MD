@@ -117,3 +117,39 @@ Edward Tufte (2006) Beautiful Evidence
     * `oma` = the outer margin size
     * `mfrow` = the number of plots per row, column (ROW-wise)
     * `mfcol` = the number of plots per row, column (COLUMN-wise)
+
+#####Base Plotting System (part 2)
+* Functions
+  * `plot()` = make a scatterplot, or other type of plot depending on the class of the object being plotted
+  * `lines()` = add lines to a plot, gi
+  * `points()`
+  * `text()`
+  * `title()`
+  * `mtext()`
+  * `axis()`
+* Other
+  * `legend(position, pch, col, legend = c())`
+    * `legend` = the labels for the legend
+
+###Lesson 3 - Graphics Devices
+
+#####Graphics Devices in R (part 1)
+* Graphics device = something with which you can make a plot appear
+  * A window (screen)
+  * A PDF file
+  * A PNG or JPEG file
+  * A scalable vector graphics (SVG) file
+* Graphics must be sent to a specific graphics device (to be generated)
+* The most common place for a plot to be "sent" is the screen device (computer screen)
+
+#####Graphics Devices in R (part 2)
+* Vector formats
+  * pdf = useful for line-type graphics, resizes well, usually portable, not efficient if a plot has many objects/points
+  * svg = XML-based scalable vector graphics; supports animation and interactivity, potentially useful for web-based plots
+  * win.metafile = Windows metafile format
+  * postscript
+* Bitmap format
+  * png = good for line drawings or images with solid colors, uses lossless compression (like the old GIF format), most web browsers can read this format natively, good for plotting many many many points, does not resize well
+  * jpeg = good for photographs or natural scenes, uses lossy compression, good for plotting many many many points , does not resize well, can be read by almost any computer and any web browser, not great for line drawings
+  * tiff = creates bitmap files in the TIFF format; supports lossless compression
+  * bmp = a native Windows bitmapped format
