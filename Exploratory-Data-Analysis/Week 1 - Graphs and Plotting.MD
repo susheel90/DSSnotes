@@ -1,4 +1,6 @@
-#Week 1 - Graphs
+#Week 1 - Graphs & Plotting
+
+###Lesson 1 - Graphs
 
 #####Principles of Analytic Graphics
 
@@ -52,3 +54,29 @@ Edward Tufte (2006) Beautiful Evidence
   * Let you summarize data and highlight any broad features
   * Explore basic questions and hypothesis
   * Suggest modeling strategies for the "next step"
+
+###Lesson 2 - Plotting
+
+#####Plotting Systems in R
+
+* The Base plotting system (`library(Graphics)`)
+  * "Artist's palette" model
+  * Start with blank canvas and build up from there
+  * Start with plot function (or similar)
+  * Use annotation functions to add/modify (text, lines, points, axis)
+  * Consequences:
+    * Convenient, mirrors how we think of building plots and analyzing data
+    * Can't go back once plot has started (i.e. to adjust margins); need to plan in advance
+    * Difficult to "translate" to others once a new plot has been created (no graphical "language")
+    * Plot is just a series of R commands
+* The Lattic system (`library(lattice)`)
+  * Pros
+    * Plots are created with a single function call (xyplot, bwplot, etc)
+    * Most useful for conditioning types of plots: Looking at how y changes with x across levels of z
+    * Things like margins/spacing set automatically because entire plot is specified at once
+    * Good for putting many many plots on a screen
+  * Cons
+    * Sometimes awkward to specify an entire plot in a single function call
+    * Annotation in plot is not especially intuitive
+    * Use of panel functions and subscripts difficult to wield and requires intense preparation
+    * Cannot "add" to the plot once it is created
