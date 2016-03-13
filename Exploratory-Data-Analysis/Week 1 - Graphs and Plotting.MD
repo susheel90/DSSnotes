@@ -98,3 +98,22 @@ Edward Tufte (2006) Beautiful Evidence
       * `x-axis` = column to populate the x-axis of a plot
       * `y-axis` = column to populate the y-axis of a plot
       * `data` = data frame or table that has data to populate the plot
+
+#####Base Plotting System (part 1)
+* Plot = `plot(x-axis, y-axis)`
+* Histogram = `hist(data$col1[data$col3 == "value", $col1], col = "color"]` | `subset(data$col1, data$col3 == "value")`
+* Boxplot = `boxplot(x-axis ~ y-axis, data = data frame, xlab = x-label, ylab = y-label, col = "color"); abline(h = "horz_line", v = "vert_line")` 
+* Parameters
+  * `pch` = the plotting symbol (i.e. circle)
+  * `lty` = the line type (i.e. solid)
+  * `lwd` = the line width, specified as an integer multiple
+  * `col` = the plotting color, specified as a number, string, or hex code
+  * `xlab` = character string for the x-axis label
+  * `ylab` = character string for the y-axis label
+  * `par()`
+    * `las` = the orientation fo the axis labels on the plot
+    * `bg` = the background color
+    * `mar` = the margin size
+    * `oma` = the outer margin size
+    * `mfrow` = the number of plots per row, column (ROW-wise)
+    * `mfcol` = the number of plots per row, column (COLUMN-wise)
