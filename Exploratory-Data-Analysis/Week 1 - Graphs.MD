@@ -45,4 +45,10 @@ Edward Tufte (2006) Beautiful Evidence
 *  Two dimensions
   *  Multiple/overlayed 1-D plots (lattic/ggplot2)
 * Plot paramaters = `par(mfrow = c(rows, cols), mar = c(bottom, left, top, right))` 
-* Histogram = `hist(data$col1[data$col3 == "value", $col1], col = "color"]` -or- `subset(data$col1, data$col3 == "value")`
+* Histogram = `hist(data$col1[data$col3 == "value", $col1], col = "color"]` | `subset(data$col1, data$col3 == "value")`
+* Grid = `with(data, plot(col1, col5))` | `plot(data$col1, data$col5)`
+* Summary
+  * Exploratory plots are "quick and dirty"
+  * Let you summarize data and highlight any broad features
+  * Explore basic questions and hypothesis
+  * Suggest modeling strategies for the "next step"
