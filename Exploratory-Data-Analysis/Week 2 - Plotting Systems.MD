@@ -35,9 +35,9 @@
 * `ggplot2` written by Hadley Wickham
 * A "third" graphics system for R (along with `base` and `lattice`)
 * `qplot()` = generates graphics for data from a data frame; factor variables indicate subsets; facets split separate multiple dataset in a single plot into multiple plots with a single dataset
-  * Scatter plot = `qplot(y, x, data =, colors =)`
-    * Facets = `qplot(x, y, data =, facets =)`
+  * Scatter plot = `qplot(y, x, data =, colors =, geom =, facets =)`
+    * `facets` = optional technique to split multiple datasets on a single plot into multiple plots with single datasets
   * Histogram = `qplot(x, data =, fill =)`
     * Facets = `qplot(x, data =, facets =)`
-  
+  * Smoothed Line = `geom_smooth()`
 * `ggplot()` = 
