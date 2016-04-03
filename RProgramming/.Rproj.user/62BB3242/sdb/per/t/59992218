@@ -1,0 +1,17 @@
+{
+    "contents" : "## Getting the best hospital per outcome\n\nbest <- function(state = character(), outcome = character()){\n\n\n## Check state input\nstate_list <- state.abb\nstate_truth <- match(state, state_list)\nif(is.na(sum(state_truth))) stop(\"invalid state\")\n\n## Check outcome input\noutcome_list <- list(\"11\" = \"heart attack\", \"17\" = \"heart failure\", \"23\" = \"pneumonia\")\noutcome_truth <- match(outcome, outcome_list)\nif(is.na(sum(outcome_truth))) stop(\"invalid outcome\")\n\n## Read file and tunnel down to state\nread_file <<- read.csv(\"outcome-of-care-measures.csv\", na.strings = \"Not Available\", stringsAsFactors = FALSE)\n        outcome_col <<- as.numeric(names(outcome_list[outcome_truth]))\ncolumn_file <- read_file[which(read_file[[7]] == state), c(2, outcome_col)] ## filter rows by $State == state\ncomplete_outcome <- column_file[complete.cases(column_file),]               ## only complete cases\nordered_outcome <<- complete_outcome[order(complete_outcome[[1]]), ]        ## order alphabetically on $Hospital.Name\nreturn_set <- complete_outcome[which.min(complete_outcome[[2]]), ]\nreturn(return_set)\n\n\n}\n\n#[2] \"Hospital.Name\"\n#[7] \"State\"\n#[11] \"Hospital.30.Day.Death..Mortality..Rates.from.Heart.Attack\"\n#[17] \"Hospital.30.Day.Death..Mortality..Rates.from.Heart.Failure\"\n#[23] \"Hospital.30.Day.Death..Mortality..Rates.from.Pneumonia\"",
+    "created" : 1453335621183.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1205518185",
+    "id" : "59992218",
+    "lastKnownWriteTime" : 1453411112,
+    "path" : "~/DSSNotes/RProgramming/Week4/best.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

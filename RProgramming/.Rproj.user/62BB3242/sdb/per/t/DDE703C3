@@ -1,0 +1,17 @@
+{
+    "contents" : "## Ranking Hospitals\n\nrankhospital <- function(state, outcome, num = \"best\"){\n    best(state, outcome)\n    ordered_table <- ordered_outcome[order(ordered_outcome[2]), ]\n        num_list = c(\"best\" = \"best\", \"worst\" = \"worst\")\n        match_num_list <- match(num, num_list, incomparables = TRUE)\n        if(!is.na(match_num_list) & match_num_list == 1){\n            number <- as.numeric(1)\n        }   else if(!is.na(match_num_list) & match_num_list == 2){\n            number <- nrow(ordered_table)\n        }   else if(is.na(match_num_list)){\n            number <- as.numeric(num)\n        }\n    grab_num <- ordered_table[number, 1]\n    return(grab_num)\n}",
+    "created" : 1453395739935.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1767641770",
+    "id" : "DDE703C3",
+    "lastKnownWriteTime" : 1453401241,
+    "path" : "~/DSSNotes/RProgramming/Week4/rankhospital.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
