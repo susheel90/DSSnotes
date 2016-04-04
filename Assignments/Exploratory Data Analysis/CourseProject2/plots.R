@@ -208,3 +208,108 @@ q + s
 
 # turn it off
 dev.off()
+
+
+
+# Q1 Alt ------------------------------------------------------------------
+
+
+barplot(height    = total.emissions$Emissions,
+        names.arg = total.emissions$Year)
+
+
+        ## summarise emissions by year
+        yeartot <- NEI %>% group_by(year) %>% summarise(emissions = sum(Emissions))
+
+
+total <- tapply(NEI$Emissions, NEI$year, FUN = sum)
+
+
+# Q2 Alt ------------------------------------------------------------------
+
+
+baltimore.emissions        <- aggregate(Emissions ~ year,
+                                        NEI[NEI$fips == "24510"],
+                                        sum)
+
+
+        Baltimore <- subset(NEI, fips == "24510", select=c(Emissions, year))
+        total <- tapply(Baltimore$Emissions, Baltimore$year, FUN = sum)
+
+
+# Q3 Alt ------------------------------------------------------------------
+
+
+baltimore.breakdown <- aggregate(Emissions ~ year + type, NEI[NEI$fips=="24510",], sum)
+
+        ## summarise by type and start/end year for Baltimore
+        typetotBalt <- NEI %>% filter(fips == "24510", year == 1999 | year == 2008) %>% 
+            group_by(type, year) %>% summarise(emissions = sum(Emissions))
+
+   
+# Q4 Alt ------------------------------------------------------------------
+
+nei.scc  <- merge(NEI, SCC, by="SCC")
+nei.coal <- nei.scc[grepl("coal", nei.scc$Short.Name, ignore.case=TRUE), ]
+nei.coal <- aggregate(Emissions ~ year, nei.coal, sum)
+
+
+# Q5 Alt ------------------------------------------------------------------
+
+
+vehicles.NEI <- NEI[NEI$SCC %in% SCC[grepl("vehicle", SCC$SCC.Level.Two, ignore.case=TRUE),]$SCC,]
+baltimore <- vehicles.NEI[vehicles.NEI$fips=="24510",]
+tots.by.year <- aggregate(Emissions ~ year, baltimore, sum)
+
+
+# Q6 Alt ------------------------------------------------------------------
+
+
+##Subset SCC and NEI
+vehicles.NEI <- NEI[NEI$SCC %in% SCC[grepl("vehicle", SCC$SCC.Level.Two, ignore.case=TRUE),]$SCC,]
+
+## Subset the for Baltimore and LA
+baltimore <- vehicles.NEI[vehicles.NEI$fips=="24510",]
+la <- vehicles.NEI[vehicles.NEI$fips=="06037",]
+
+##Add City Label
+baltimore$city <- "Baltimore City"
+la$city <- "Los Angeles County"
+
+##Combine
+combined <- rbind(baltimore, la)
+
+##Aggregate total emissions by year
+tots.by.year <- aggregate(Emissions ~ year + city, combined, sum)
+
+## Change canvas
+png('plot6.png', width = 480, height = 480)
+
+## Create Plot
+g <- ggplot(data=tots.by.year, aes(x=factor(year), y=Emissions/1000)) 
+g <- g + facet_grid(. ~ city) +  
+    geom_bar(aes(fill=year),stat="identity") +
+    ggtitle('Total Emissions of Motor Vehicle Sources Los Angeles vs. Baltimore') +
+    ylab('Total PM2.5 Emissions (in thousands of tons)') +
+    xlab('Year') +
+    theme(legend.position='none')
+print(g)
+
+##--
+        # Compare emissions from motor vehicle sources in Baltimore City with emissions from motor 
+        # vehicle sources in Los Angeles County, California (fips == "06037"). 
+        # Which city has seen greater changes over time in motor vehicle emissions?
+        
+        # 24510 is Baltimore, 06037 is LA CA
+        # Searching for ON-ROAD type in NEI
+        subsetNEI <- NEI[(NEI$fips=="24510"|NEI$fips=="06037") & NEI$type=="ON-ROAD",  ]
+        
+        aggregatedTotalByYearAndFips <- aggregate(Emissions ~ year + fips, subsetNEI, sum)
+        aggregatedTotalByYearAndFips$fips[aggregatedTotalByYearAndFips$fips=="24510"] <- "Baltimore, MD"
+        aggregatedTotalByYearAndFips$fips[aggregatedTotalByYearAndFips$fips=="06037"] <- "Los Angeles, CA"
+##--
+
+## Determine subset matching vehicle sources from both cities
+vehicle <- grepl("vehicle", mergedData$Short.Name, ignore.case=TRUE)
+subdataB <- mergedData[vehicle & mergedData$fips=="24510",]
+subdataL <- mergedData[vehicle & mergedData$fips=="06037",]
