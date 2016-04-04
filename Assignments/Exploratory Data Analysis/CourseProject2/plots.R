@@ -29,6 +29,7 @@ total.emissions        <- aggregate(NEI$Emissions, list(NEI$year), function(x) s
 names(total.emissions) <- c("Year", "Emissions")
 
  # plot with 'base'
+png("plot1.png")
 plot(x    = total.emissions$Year,
      y    = total.emissions$Emissions,
      main = "Total Annual PM2.5 Emissions: United States",
@@ -60,6 +61,7 @@ baltimore.emissions        <- aggregate(baltimore$Emissions, list(baltimore$year
 names(baltimore.emissions) <- c("Year", "Emissions")
 
 # plot with 'base'
+png("plot2.png")
 plot(x    = baltimore.emissions$Year,
      y    = baltimore.emissions$Emissions,
      main = "Total Annual PM2.5 Emissions: Baltimore, Maryland",
@@ -91,10 +93,12 @@ baltimore.breakdown <- aggregate(baltimore$Emissions, list(baltimore$year, as.fa
 names(baltimore.breakdown) <- c("Year", "Type", "Emissions")
 
  # plot with `ggplot`
-q <- qplot(x = Year,
-           y = Emissions,
-           data = baltimore.breakdown,
-           facets = .~Type)
+png("plot3.png")
+q <- qplot(x      = Year,
+           y      = Emissions,
+           data   = baltimore.breakdown,
+           facets = .~Type,
+           main   = "Total Annual PM2.5 Emissions\n Baltimore, Maryland\n 1999-2008")
 s <- geom_smooth(method = "loess",
                  se = FALSE)
 q + s
@@ -121,6 +125,7 @@ coal.emissions        <- aggregate(nei.coal$Emissions, list(nei.coal$year), func
 names(coal.emissions) <- c("Year", "Emissions")
 
 # plot it out
+png("plot4.png")
 q <- qplot(x    = Year,
            y    = Emissions,
            data = coal.emissions,
@@ -131,6 +136,7 @@ q + s
 
 # turn it off
 dev.off()
+
 
 # Question 5 --------------------------------------------------------------
 
@@ -148,6 +154,7 @@ balt.vehicles.emissions        <- aggregate(baltimore.vehicles$Emissions, list(b
 names(balt.vehicles.emissions) <- c("Year", "Emissions")
 
 # plot it out
+png("plot5.png")
 q <- qplot(x    = Year,
            y    = Emissions,
            data = balt.vehicles.emissions,
@@ -161,6 +168,7 @@ dev.off()
 
 
 # Question 6 --------------------------------------------------------------
+
 
 # 6. Compare emissions from motor vehicle sources in Baltimore City with emissions
 # from motor vehicle sources in Los Angeles County, California (fips == "06037").
@@ -188,6 +196,7 @@ balt.vehicles.emissions$City <- c("Baltimore")
 labalt.vehicles.emissions    <- rbind(la.vehicles.emissions, balt.vehicles.emissions)
 
 # plot it out
+png("plot6.png")
 q <- qplot(x     = Year,
            y     = Emissions,
            data  = labalt.vehicles.emissions,
